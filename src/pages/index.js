@@ -6,7 +6,9 @@ import {
   StyledEngineProvider
 } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import ButtonAppBar from "../components/Navbar";
+import Navbar from "../components/Navbar";
+import VideosYouTubeContainer from "../containers/VideosYouTubeContainer";
+import HeroSection from "../components/HeroSection";
 
 let darkTheme = createTheme(
   {
@@ -23,7 +25,9 @@ const IndexPage = () => {
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={darkTheme}>
         <CssBaseline />
-        <ButtonAppBar />
+        <Navbar />
+        <HeroSection />
+        <VideosYouTubeContainer />
       </ThemeProvider>
     </StyledEngineProvider>
   );
