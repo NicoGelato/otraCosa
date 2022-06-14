@@ -18,8 +18,9 @@ const useStyles = makeStyles({
   },
   iframe: {
     "&:hover,&:active": {
-      borderRadius: "10px",
-      boxShadow: "0 0 3px #988",
+      // borderRadius: "10px",
+      // boxShadow: "0 0 25px #1B1B1B",
+      transform: "scale(1.02)",
     },
   },
 });
@@ -30,7 +31,7 @@ const VideosYouTube = ({ videos }) => {
     <Container maxWidth="md">
       <Typography variant="h4" component="h1" gutterBottom>
         {" "}
-        Videos{" "}
+        Ultimos Videos{" "}
       </Typography>
       <Grid container spacing={4}>
         {videos.length === 0 || !Array.isArray(videos) ? (

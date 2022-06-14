@@ -33,13 +33,16 @@ const useStyles = makeStyles(
       backgroundColor: "rgba(0,0,10,0.3)",
       padding: "9vh",
       borderRadius: "3px",
-    },
+      textShadow: "0px 0px 7px #000000",
+    }
   },
   { index: 1 }
 );
 
 const HeroSection = () => {
   const styles = useStyles();
+
+  // El tiempo que tardan en aparecer los grows en el backDrop
   const [showInOne, setShowInOne] = React.useState(false);
   const [showInTwo, setShowInTwo] = React.useState(false);
   const [showInFour, setShowInFour] = React.useState(false);
@@ -84,7 +87,10 @@ const HeroSection = () => {
             <Grid item className={styles.backDrop} sm={9}>
               <Grow in={showInOne}>
                 <Box my={1}>
-                  <Typography componet="h1" variant="h3">
+                  <Typography
+                    componet="h1"
+                    variant="h3"
+                  >
                     Ey vos,
                   </Typography>
                 </Box>
