@@ -29,12 +29,13 @@ const useStyles = makeStyles(
       height: "100%",
     },
     backDrop: {
+      margin: "20px",
       backdropFilter: "blur(3px)",
-      backgroundColor: "rgba(0,0,10,0.3)",
+      backgroundColor: "rgba(0,0,0,0.5)",
       padding: "9vh",
       borderRadius: "3px",
       textShadow: "0px 0px 7px #000000",
-    }
+    },
   },
   { index: 1 }
 );
@@ -48,7 +49,7 @@ const HeroSection = () => {
   const [showInFour, setShowInFour] = React.useState(false);
   const [showInFive, setShowInFive] = React.useState(false);
 
-  React.useEffect(() => {
+  const showAll = () => {
     setTimeout(() => {
       setShowInOne(true);
     }, 1000);
@@ -64,6 +65,10 @@ const HeroSection = () => {
     setTimeout(() => {
       setShowInFive(true);
     }, 5000);
+  };
+
+  React.useEffect(() => {
+    showAll();
   }, []);
   return (
     <>
@@ -87,10 +92,7 @@ const HeroSection = () => {
             <Grid item className={styles.backDrop} sm={9}>
               <Grow in={showInOne}>
                 <Box my={1}>
-                  <Typography
-                    componet="h1"
-                    variant="h3"
-                  >
+                  <Typography componet="h1" variant="h3">
                     Ey vos,
                   </Typography>
                 </Box>

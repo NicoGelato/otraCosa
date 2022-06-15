@@ -9,26 +9,21 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-// import Icon from '@mui/material/Icon';
-import otraCosaSVG from "../images/otraCosaSVG.svg";
+import SvgIcon from "@mui/material/SvgIcon";
+import OtraCosaSVG from "../svg/OtraCosaSVGcomponent";
 import makeStyles from "@mui/styles/makeStyles/makeStyles";
 
 const useStyles = makeStyles({
   appBar: {
-    border: "none",
-    boxShadow: "none",
-    backdropFilter: "blur(1px)",
-    backgroundColor: "rgba(0,0,10,0.3)",
+    // border: "none",
+    // boxShadow: "none",
+    backdropFilter: "blur(2px)",
+    backgroundColor: "rgba(0,0,8,0.8)",
   },
-  otraCosaSVG: {
-    display: "flex",
-    height: "inherit",
-    width: "inherit",
-    color: "white",
+  svgIcon: {
+    height: 65,
+    width: 66,
   },
-  iconRoot: {
-    textAlign: "center",
-  }
 });
 
 const pages = ["Novedades", "Videos", "Contacto"];
@@ -47,30 +42,56 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar className={styles.appBar} position="sticky" color="transparent">
+    <AppBar className={styles.appBar} position="sticky">
       <Container maxWidth="xl">
-        <Toolbar disableGutters >
-          {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
-          {/* <Icon
-            classes={{ root: styles.iconRoot }}
-            sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
+        <Toolbar disableGutters>
+          <SvgIcon
+            className={styles.svgIcon}
+            sx={{ display: { xs: "none", md: "flex" }, mr: 1, my: 1 }}
           >
-            <img className={styles.imageIcon} src="../images/otraCosaSVG.svg" />
-          </Icon> */}
-          <otraCosaSVG
-            className={otraCosaSVG}
-            sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
-          />
+            <OtraCosaSVG fill="#fff" width="1em" height="1em" />
+          </SvgIcon>
           <Typography
             variant="h6"
             noWrap
             component="a"
             href="/"
             sx={{
-              mr: 2,
+              ml: 1,
               display: { xs: "none", md: "flex" },
-              fontFamily: "Segoe UI",
-              fontWeight: 600,
+              // fontFamily: "Lucida Handwriting",
+              fontFamily: "Consolas",
+              fontWeight: 150,
+              letterSpacing: ".1rem",
+              color: "inherit",
+              textDecoration: "none",
+            }}
+          >
+            Otra Cosa
+          </Typography>
+          <SvgIcon
+            className={styles.svgIcon}
+            sx={{
+              display: { xs: "flex", md: "none" },
+              ml: 1,
+              my: 1.3,
+              alignContent: "center",
+            }}
+          >
+            <OtraCosaSVG fill="#fff" width="1em" height="1em" />
+          </SvgIcon>
+          <Typography
+            variant="h5"
+            noWrap
+            component="a"
+            href=""
+            sx={{
+              ml: 2,
+              display: { xs: "flex", md: "none" },
+              flexGrow: 1,
+              // fontFamily: "Lucida Handwriting",
+              fontFamily: "Consolas",
+              fontWeight: 150,
               letterSpacing: ".3rem",
               color: "inherit",
               textDecoration: "none",
@@ -78,7 +99,13 @@ const Navbar = () => {
           >
             Otra Cosa
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: 'none' },  float: "inline-end" } }>
+          <Box
+            justifyContent="flex-end"
+            sx={{
+              flexGrow: 1,
+              display: { xs: "flex", md: "none" },
+            }}
+          >
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -94,7 +121,7 @@ const Navbar = () => {
               anchorEl={anchorElNav}
               anchorOrigin={{
                 vertical: "bottom",
-                horizontal: "left",
+                horizontal: "rigth",
               }}
               keepMounted
               transformOrigin={{
@@ -114,38 +141,21 @@ const Navbar = () => {
               ))}
             </Menu>
           </Box>
-          {/* <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} /> */}
-          {/* <Icon
-            classes={{ root: styles.iconRoot }}
-            sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
+          <Box
+            justifyContent="flex-end"
+            sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}
           >
-            <img className={styles.imageIcon} src={otraCosaSVG} />
-          </Icon> */}
-          <otraCosaSVG className={otraCosaSVG} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            Otra Cosa
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{
+                  my: 2,
+                  color: "white",
+                  display: "block",
+                  fontFamily: "Consolas",
+                  letterSpacing: 2,
+                }}
               >
                 {page}
               </Button>
@@ -158,42 +168,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-/* import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
-
-const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
-
-const Navbar = () => {
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
-
-  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElNav(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-};
-
-  return (
-    <AppBar position="static">
-
-    </AppBar>
-  );
-};
-export default ResponsiveAppBar;
-*/
