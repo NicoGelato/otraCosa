@@ -1,7 +1,9 @@
-export const getYouTubeApi = async (results = 4) => {
+export const getYouTubeApi = async () => {
+  //Pensar como agregar esto como opcion
+  //&maxResults=${results}
   try {
     const youTubeApi = await fetch(
-      `https://www.googleapis.com/youtube/v3/search?key=AIzaSyCHW15Uojw2BJHAB5lXaPnZN6oAiHqGQhI&channelId=UCGtktNjRa7gLfhHA1R_5n1w&part=snippet,id&order=date&maxResults=${results}`
+      `https://www.googleapis.com/youtube/v3/search?key=AIzaSyAZSavwxYnudAGgTWXsB4f-bkvoD2AWEPQ&channelId=UCGtktNjRa7gLfhHA1R_5n1w&part=snippet,id&order=date&maxResults=50`
     );
     const response = await youTubeApi.json();
 
@@ -10,5 +12,3 @@ export const getYouTubeApi = async (results = 4) => {
     console.log(error);
   }
 };
-
-// Ver videos sobre async/await:
