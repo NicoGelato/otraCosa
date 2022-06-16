@@ -6,6 +6,7 @@ import Grow from "@mui/material/Grow";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import backgroundVideo from "../videos/backgroundVideo_otraCosa.mp4";
+import otraCosaLogo from "../images/icon.png";
 import makeStyles from "@mui/styles/makeStyles/makeStyles";
 
 const useStyles = makeStyles(
@@ -20,7 +21,6 @@ const useStyles = makeStyles(
       height: "85vh",
       position: "relative",
       overflow: "hidden",
-      marginBottom: "20px",
     },
     container: {
       width: "100%",
@@ -36,6 +36,10 @@ const useStyles = makeStyles(
       borderRadius: "3px",
       textShadow: "0px 0px 7px #000000",
     },
+    otraCosaLogo: {
+      maxWidth: "100%",
+      maxHeight: "100%",
+    },
   },
   { index: 1 }
 );
@@ -48,6 +52,7 @@ const HeroSection = () => {
   const [showInTwo, setShowInTwo] = React.useState(false);
   const [showInFour, setShowInFour] = React.useState(false);
   const [showInFive, setShowInFive] = React.useState(false);
+  const [showInSix, setShowInSix] = React.useState(false);
 
   const showAll = () => {
     setTimeout(() => {
@@ -65,11 +70,16 @@ const HeroSection = () => {
     setTimeout(() => {
       setShowInFive(true);
     }, 5000);
+
+    setTimeout(() => {
+      setShowInSix(true);
+    }, 6000);
   };
 
   React.useEffect(() => {
     showAll();
   }, []);
+
   return (
     <>
       <Paper className={styles.paper} elevation={0}>
@@ -117,6 +127,30 @@ const HeroSection = () => {
                     Otra Cosa
                   </Typography>
                 </Box>
+              </Grow>
+            </Grid>
+
+            {/* Aca planeo hacer una card de "Proximo Evento" con la ultima publicacion de instagram */}
+            <Grid
+              item
+              sm={2}
+              sx={{
+                width: { xs: "50%", md: "100%" },
+                marginLeft: { xs: "auto", md: "20px" },
+                marginRight: { xs: "auto", md: 0 },
+                zIndex: "1",
+                textAlign: "center",
+              }}
+            >
+              <Grow
+                in={showInSix}
+                // className={styles.backDrop}
+              >
+                <img
+                  className={styles.otraCosaLogo}
+                  src={otraCosaLogo}
+                  alt="Otra Cosa Logo"
+                />
               </Grow>
             </Grid>
           </Grid>

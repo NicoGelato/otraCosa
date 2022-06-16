@@ -6,6 +6,7 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
+import Link from "@mui/material/Link";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
@@ -26,7 +27,11 @@ const useStyles = makeStyles({
   },
 });
 
-const pages = ["Novedades", "Videos", "Contacto"];
+const pages = [
+  { name: "Novedades" },
+  { name: "Videos", href: "#Videos" },
+  { name: "Contacto" },
+];
 
 const Navbar = () => {
   const styles = useStyles();
@@ -74,7 +79,7 @@ const Navbar = () => {
             sx={{
               display: { xs: "flex", md: "none" },
               ml: 1,
-              my: 1.3,
+              my: 1,
               alignContent: "center",
             }}
           >
@@ -135,9 +140,15 @@ const Navbar = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="right">{page}</Typography>
-                </MenuItem>
+                <Link
+                  sx={{ textDecoration: "none" }}
+                  href={page.href}
+                  key={page.name}
+                >
+                  <MenuItem onClick={handleCloseNavMenu}>
+                    <Typography textAlign="right">{page.name}</Typography>
+                  </MenuItem>
+                </Link>
               ))}
             </Menu>
           </Box>
@@ -146,19 +157,24 @@ const Navbar = () => {
             sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}
           >
             {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{
-                  my: 2,
-                  color: "white",
-                  display: "block",
-                  fontFamily: "Consolas",
-                  letterSpacing: 2,
-                }}
+              <Link
+                sx={{ textDecoration: "none" }}
+                href={page.href}
+                key={page.name}
               >
-                {page}
-              </Button>
+                <Button
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    my: 2,
+                    color: "white",
+                    display: "block",
+                    fontFamily: "Consolas",
+                    letterSpacing: 2,
+                  }}
+                >
+                  {page.name}
+                </Button>
+              </Link>
             ))}
           </Box>
         </Toolbar>
