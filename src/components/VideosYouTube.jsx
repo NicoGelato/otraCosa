@@ -35,10 +35,6 @@ const VideosYouTube = ({ videos, id }) => {
   const [limit, setLimit] = React.useState(4);
   const [tardoMucho, setTardoMucho] = React.useState(false);
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 1072043cb95e4401f2091bf7762108213f334b26
   React.useEffect(() => {
     const esperarTreintaSeg = setTimeout(() => {
       setTardoMucho(true);
@@ -48,11 +44,7 @@ const VideosYouTube = ({ videos, id }) => {
     };
   }, []);
 
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 880a4bafdc69e2170822aaca9ed26301dc8cae95
->>>>>>> 1072043cb95e4401f2091bf7762108213f334b26
+
   const showMoreResults = () => {
     setLimit(limit + 2);
   };
@@ -70,10 +62,6 @@ const VideosYouTube = ({ videos, id }) => {
       </Typography>
       <Grid container spacing={4}>
         {!Array.isArray(videos) || videos.length === 0 ? (
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 1072043cb95e4401f2091bf7762108213f334b26
           tardoMucho ? (
             <Grid item className={styles.gridItem} xs={12}>
               <Box
@@ -98,12 +86,6 @@ const VideosYouTube = ({ videos, id }) => {
               );
             })
           )
-<<<<<<< HEAD
-=======
-=======
-          <Skeleton variant="rectangular" width={480} height={240} />
->>>>>>> 880a4bafdc69e2170822aaca9ed26301dc8cae95
->>>>>>> 1072043cb95e4401f2091bf7762108213f334b26
         ) : (
           videos.slice(0, limit).map((video) => {
             return (
