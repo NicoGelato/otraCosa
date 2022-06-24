@@ -11,16 +11,16 @@ import makeStyles from "@mui/styles/makeStyles/makeStyles";
 
 const useStyles = makeStyles(
   {
+    paper: {
+      height: "85vh",
+      position: "relative",
+      overflow: "hidden",
+    },
     backgroundVideo: {
       position: "absolute",
       width: "100%",
       objectFit: "cover",
       height: "inherit",
-    },
-    paper: {
-      height: "85vh",
-      position: "relative",
-      overflow: "hidden",
     },
     container: {
       width: "100%",
