@@ -30,7 +30,7 @@ const useStyles = makeStyles({
 const pages = [
   { name: "Novedades" },
   { name: "Videos", href: "#Videos" },
-  { name: "Contacto" },
+  { name: "Contacto", href: "#Contacto" },
 ];
 
 const Navbar = () => {

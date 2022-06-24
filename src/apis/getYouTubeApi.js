@@ -1,5 +1,4 @@
 export const getYouTubeApi = async () => {
-  //Pensar como agregar esto como opcion
   //&maxResults=${results}
   try {
     const youTubeApi = await fetch(

@@ -2,25 +2,9 @@ import * as React from "react";
 import { useEffect, useState, useCallback } from "react";
 import { getYouTubeApi } from "../apis/getYouTubeApi";
 import VideosYouTube from "../components/VideosYouTube";
-import backgroundOtraCosa from "../images/backgroundOtraCosa_Songs_1.png";
-import makeStyles from "@mui/styles/makeStyles";
 
-const useStyles = makeStyles({
-  background: {
-    backgroundImage: `url(${backgroundOtraCosa})`,
-    paddingBottom: "10px",
-  },
-});
-
-const VideosYouTubeContainer = () => {
-  const styles = useStyles();
-
-  const [videos, setVideos] = useState([]);
-  // const [results, setResults] = useState(4);
-
-  // const showMoreResults = () => {
-  //   setResults(results + 2);
-  // };
+const VideosYouTubeContainer = ({id}) => {
+  const [videos, setVideos] = useState(null);
 
   const getYouTubeApiData = async () => {
     try {
@@ -41,11 +25,7 @@ const VideosYouTubeContainer = () => {
     setVideos(videosList);
   }, [videosList]);
 
-  return (
-    <div className={styles.background} id="Videos">
-      <VideosYouTube videos={videos} />
-    </div>
-  );
+  return <VideosYouTube id={id} videos={videos} />;
 };
 
 export default VideosYouTubeContainer;
