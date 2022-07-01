@@ -44,7 +44,6 @@ const VideosYouTube = ({ videos, id }) => {
     };
   }, []);
 
-
   const showMoreResults = () => {
     setLimit(limit + 2);
   };
@@ -78,7 +77,7 @@ const VideosYouTube = ({ videos, id }) => {
               </Box>
             </Grid>
           ) : (
-            [1, 2, 3, 4].map((e) => {
+            [...Array(5).keys()].map((e) => {
               return (
                 <Grid key={e} item className={styles.gridItem} xs={12} md={6}>
                   <Skeleton variant="rectangular" width={480} height={240} />
