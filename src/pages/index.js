@@ -6,6 +6,7 @@ import {
   StyledEngineProvider,
 } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
+import Helmet from "../components/Helmet";
 import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
 // import News from "../components/News";
@@ -42,6 +43,7 @@ const IndexPage = () => {
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={darkTheme}>
         <CssBaseline />
+        <Helmet />
         <Navbar />
         <HeroSection />
         <main className={styles.background}>
