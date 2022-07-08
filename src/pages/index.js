@@ -9,7 +9,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import  Helmet  from "react-helmet";
 import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
-// import News from "../components/News";
+import News from "../components/News";
 import VideosYouTubeContainer from "../containers/VideosYouTubeContainer";
 import Mailer from "../components/Mailer";
 import SocialFooter from "../components/SocialFooter";
@@ -73,7 +73,7 @@ const IndexPage = () => {
         <Navbar />
         <HeroSection />
         <main className={styles.background}>
-          {/* <News /> */}
+          <News id="Novedades"/>
           <VideosYouTubeContainer id="Videos" />
           <Mailer id="Contacto" />
         </main>

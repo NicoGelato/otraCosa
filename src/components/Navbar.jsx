@@ -28,7 +28,7 @@ const useStyles = makeStyles({
 });
 
 const pages = [
-  { name: "Novedades" },
+  { name: "Novedades", href: "#Novedades" },
   { name: "Videos", href: "#Videos" },
   { name: "Contacto", href: "#Contacto" },
 ];
@@ -60,7 +60,7 @@ const Navbar = () => {
             variant="h6"
             noWrap
             component="a"
-            href="/"
+            href="https://otracosa.gatsbyjs.io/"
             sx={{
               ml: 1,
               display: { xs: "none", md: "flex" },
