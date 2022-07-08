@@ -38,7 +38,7 @@ const Mailer = ({ id }) => {
     try {
       event.preventDefault();
       await emailjs.sendForm(
-        "service_zp5yh1k",
+        "servicezp5yh1k",
         "template_txupyfr",
         form.current,
         "15SwNbyzlKNgjjpw7"
