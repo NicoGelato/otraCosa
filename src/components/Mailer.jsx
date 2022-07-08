@@ -38,7 +38,7 @@ const Mailer = ({ id }) => {
     try {
       event.preventDefault();
       await emailjs.sendForm(
-        "service_zp5yh1k",
+        "servicezp5yh1k",
         "template_txupyfr",
         form.current,
         "15SwNbyzlKNgjjpw7"
@@ -133,6 +133,9 @@ const Mailer = ({ id }) => {
             Enviar
           </Button>
         </Box>
+        <Typography variant="body2" color="textSecondary" align="center" mt={2}>
+          contactootracosa@gmail.com
+        </Typography>
       </Box>
       {typeof sentSuccessfully === "boolean" ? (
         sentSuccessfully === true ? (
@@ -156,7 +159,11 @@ const Mailer = ({ id }) => {
           >
             <Alert variant="filled" severity="error">
               <AlertTitle>ERROR</AlertTitle>
-              Hubo un error al enviar, vuelva a intentarlo más tarde
+              Hubo un error al enviar, vuelva a intentarlo más tarde o contacte
+              con{" "}
+              <a href="mailto:contactootracosa@gmail.com?Subject=Enviado%20desde%20otracosa.gatsbyjs.io&body=Hola%20Otra%20Cosa,%20">
+                contactootracosa@gmail.com
+              </a>
             </Alert>
           </Snackbar>
         )
